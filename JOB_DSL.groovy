@@ -1,7 +1,7 @@
 job('First maven project VIA DSL') {
   description ("First project via DSL generated on ${new Date()} ")
   scm {
-    git(https://github.com/jigglypuff27/Jenkins_Upgradev3.git,master)
+    git("https://github.com/jigglypuff27/Jenkins_Upgradev3.git",'master')
   }
   triggers {
     scm('* * * * *')
@@ -11,6 +11,6 @@ job('First maven project VIA DSL') {
   }
   publishers {
           archiveArtifacts '**/*.jar'
-        }
+  }
         
 }  
