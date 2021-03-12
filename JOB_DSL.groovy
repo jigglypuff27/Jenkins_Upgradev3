@@ -1,20 +1,15 @@
-job('First maven project VIA DSL')
-{
+job('First maven project VIA DSL') {
   description ("First project via DSL generated on ${new Date()} ")
-  scm 
-  {
+  scm {
     git(https://github.com/jigglypuff27/Jenkins_Upgradev3.git,master)
   }
-  triggers
-  {
+  triggers {
     scm('* * * * *')
   }
-  steps
-  {
+  steps {
     maven('clean package','maven-samples/single-module/pom.xml')
   }
-  publishers
-        {
+  publishers {
           archiveArtifacts '**/*.jar'
         }
         
